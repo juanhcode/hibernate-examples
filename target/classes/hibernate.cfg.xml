@@ -16,7 +16,7 @@
     <property name="hibernate.hbm2ddl.auto">update</property>
     <mapping class="com.example.entities.Cliente"/>
     <mapping class="com.example.entities.Direccion"></mapping>
-    <mapping class="com.example.entities.ClienteBidireccional"></mapping>
-    <mapping class="com.example.entities.DireccionBidireccional"></mapping>
+    <mapping class="com.example.entities.Address"></mapping>
+    <mapping class="com.example.entities.Person"></mapping>
   </session-factory>
 </hibernate-configuration>
