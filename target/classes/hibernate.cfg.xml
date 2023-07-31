@@ -20,5 +20,9 @@
     <mapping class="com.example.entities.Person"></mapping>
     <mapping class="com.example.entities.Profesor"></mapping>
     <mapping class="com.example.entities.CorreoElectronico"></mapping>
+    <mapping class="com.example.entities.Autor"></mapping>
+    <mapping class="com.example.entities.Libro"></mapping>
+    <mapping class="com.example.entities.AutorLibro"></mapping>
+
   </session-factory>
 </hibernate-configuration>

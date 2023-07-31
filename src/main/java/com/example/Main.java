@@ -1,19 +1,17 @@
 package com.example;
 
-import com.example.entities.Address;
-import com.example.entities.CorreoElectronico;
-import com.example.entities.Person;
-import com.example.entities.Profesor;
-import com.example.services.AddressService;
-import com.example.services.PersonService;
-import com.example.services.ProfesorService;
+import com.example.entities.*;
+import com.example.services.*;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class Main {
 
     public static void main(String[] args) {
+        /*
         ProfesorService profesorService = new ProfesorService();
 
         Profesor profesor = new Profesor(4, "Jose", "Perez");
@@ -27,6 +25,42 @@ public class Main {
         profesor.setCorreosElectronicos(correosElectronicos);
 
         profesorService.createProfesor(profesor);
+         */
+
+        AutorService autorService = new AutorService();
+        LibroService libroService = new LibroService();
+        AutorLibroService autorLibroService = new AutorLibroService();
+        Autor autor = new Autor("Juan");
+        autorService.createAutor(autor);
+
+
+        Libro libro1 = new Libro("Narnia");
+        Libro libro2 = new Libro("Cien años de soledad");
+        Libro libro3 = new Libro("Siuu");
+        libroService.createLibro(libro1);
+        libroService.createLibro(libro2);
+        libroService.createLibro(libro3);
+
+
+
+        AutorLibro autorLibro1 = new AutorLibro(autor, libro1);
+        AutorLibro autorLibro2 = new AutorLibro(autor, libro2);
+        AutorLibro autorLibro3 = new AutorLibro(autor, libro3);
+        autorLibroService.createAutorLibro(autorLibro1);
+        autorLibroService.createAutorLibro(autorLibro2);
+        autorLibroService.createAutorLibro(autorLibro3);
+
+
+        List<AutorLibro> autorLibros = new ArrayList<>();
+        autorLibros.add(autorLibro1);
+        autorLibros.add(autorLibro2);
+        autorLibros.add(autorLibro3);
+
+        autor.setAutorLibros(autorLibros);
+
+        autorService.updateAutor(autor);
+
+
 
     }
 }
