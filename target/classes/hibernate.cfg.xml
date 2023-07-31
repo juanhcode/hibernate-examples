@@ -18,5 +18,7 @@
     <mapping class="com.example.entities.Direccion"></mapping>
     <mapping class="com.example.entities.Address"></mapping>
     <mapping class="com.example.entities.Person"></mapping>
+    <mapping class="com.example.entities.Profesor"></mapping>
+    <mapping class="com.example.entities.CorreoElectronico"></mapping>
   </session-factory>
 </hibernate-configuration>

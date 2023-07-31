@@ -1,24 +1,32 @@
 package com.example;
 
 import com.example.entities.Address;
+import com.example.entities.CorreoElectronico;
 import com.example.entities.Person;
+import com.example.entities.Profesor;
 import com.example.services.AddressService;
 import com.example.services.PersonService;
+import com.example.services.ProfesorService;
+
+import java.util.HashSet;
+import java.util.Set;
 
 public class Main {
 
     public static void main(String[] args) {
-        AddressService  addressService= new AddressService();
-        PersonService  personService = new PersonService();
-        Person person = new Person(1L,"Juan Sebastian",23);
-        personService.createPerson(person);
+        ProfesorService profesorService = new ProfesorService();
 
-        Address address = new Address(1L,"Carrera 33","Tulua");
+        Profesor profesor = new Profesor(4, "Jose", "Perez");
 
-        address.setPerson(person);
-        person.setAddress(address);
+        // Crear correos electrónicos y establecer la relación bidireccional
+        Set<CorreoElectronico> correosElectronicos = new HashSet<>();
+        correosElectronicos.add(new CorreoElectronico(9, "joseperez@example.com", profesor));
+        correosElectronicos.add(new CorreoElectronico(10, "jose@gmail.com", profesor));
+        correosElectronicos.add(new CorreoElectronico(11, "josepreez@universidad.edu", profesor));
 
-        addressService.createAddress(address);
+        profesor.setCorreosElectronicos(correosElectronicos);
+
+        profesorService.createProfesor(profesor);
 
     }
 }
